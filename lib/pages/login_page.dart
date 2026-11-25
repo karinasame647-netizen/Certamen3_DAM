@@ -150,7 +150,7 @@ class LoginPageState extends State<LoginPage> {
     );
   }
 
-  //iniciar sesion con google (fallido)
+  //iniciar sesion con google
   Future<void> iniciarSesionGoogle() async {
     setState(() {
       iniciandoConGoogle = true;

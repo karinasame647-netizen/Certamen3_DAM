@@ -166,7 +166,7 @@ class HomePageState extends State<HomePage> {
         ),
         SizedBox(height: 10),
         Text(
-          'Hola, $nombreUsuario',
+          'Bienvenido, $nombreUsuario',
           textAlign: TextAlign.center,
           style: TextStyle(
             color: PaletaColores.secundario,
