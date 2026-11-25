@@ -8,6 +8,7 @@ import 'package:material_ui/material_ui.dart';
 import 'package:certame3_angel_salinas/data/categoria.dart';
 import 'package:certame3_angel_salinas/services/imagen_service.dart';
 import 'package:certame3_angel_salinas/services/producto_service.dart';
+import 'package:certame3_angel_salinas/services/auth_service.dart';
 import 'package:certame3_angel_salinas/utils/tipo_fecha.dart';
 import 'package:certame3_angel_salinas/utils/paleta_colores.dart';
 import 'package:flutter_material_design_icons/flutter_material_design_icons.dart';
@@ -254,7 +255,7 @@ class _AgregarObjetoPageState extends State<AgregarObjetoPage> {
         tipo,
         fechaHora,
         estado: 'Vigente',
-        autor: usuario.email ?? usuario.uid,
+        autor: AuthService.nombreVisible(usuario),
         autorUid: usuario.uid,
         foto: base64Encode(fotoSeleccionada!),
       );
@@ -278,7 +279,9 @@ class _AgregarObjetoPageState extends State<AgregarObjetoPage> {
   //Este es el formulario que se utiliza para agregar un nuevo objeto
   @override
   Widget build(BuildContext context) {
-    final autor = FirebaseAuth.instance.currentUser?.email ?? 'Usuario';
+    final autor = AuthService.nombreVisible(
+      FirebaseAuth.instance.currentUser,
+    );
     return Scaffold(
       backgroundColor: PaletaColores.fondo,
       appBar: AppBar(

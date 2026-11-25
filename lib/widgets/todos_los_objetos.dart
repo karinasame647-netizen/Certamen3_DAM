@@ -9,6 +9,7 @@ import 'package:certame3_angel_salinas/utils/peticion.dart';
 import 'package:certame3_angel_salinas/utils/tipo_card_publicaciones.dart';
 import 'package:certame3_angel_salinas/utils/tipo_fecha.dart';
 import 'package:certame3_angel_salinas/utils/paleta_colores.dart';
+import 'package:certame3_angel_salinas/services/auth_service.dart';
 
 class TodosLosObjetosPage extends StatelessWidget {
   const TodosLosObjetosPage({super.key});
@@ -345,7 +346,9 @@ class _FormularioPeticionDialogState extends State<FormularioPeticionDialog> {
   void initState() {
     super.initState();
     remitenteCtrl = TextEditingController(
-      text: FirebaseAuth.instance.currentUser?.email ?? '',
+      text: AuthService.nombreVisible(
+        FirebaseAuth.instance.currentUser,
+      ),
     );
   }
 

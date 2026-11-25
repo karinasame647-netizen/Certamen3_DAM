@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_material_design_icons/flutter_material_design_icons.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:certame3_angel_salinas/utils/paleta_colores.dart';
+import 'package:certame3_angel_salinas/services/auth_service.dart';
 
 //Aqui se muestra el boton ver sesion que no tiene mayor uso que solo colocar el usuario que esta conectado
 class VerSesion extends StatelessWidget {
@@ -27,9 +28,9 @@ class VerSesion extends StatelessWidget {
         SizedBox(height: 24),
         Card(
           child: ListTile(
-            leading: Icon(MdiIcons.emailOutline),
-            title: Text('Correo electrónico'),
-            subtitle: Text(user?.email ?? 'No disponible'),
+            leading: Icon(MdiIcons.accountOutline),
+            title: Text('Nombre'),
+            subtitle: Text(AuthService.nombreVisible(user)),
           ),
         ),
       ],

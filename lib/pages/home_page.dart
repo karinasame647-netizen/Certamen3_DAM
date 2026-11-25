@@ -7,6 +7,7 @@ import 'package:certame3_angel_salinas/widgets/peticiones_page.dart';
 import 'package:certame3_angel_salinas/widgets/ver_publicaciones.dart';
 import 'package:certame3_angel_salinas/widgets/ver_sesion.dart';
 import 'package:certame3_angel_salinas/utils/paleta_colores.dart';
+import 'package:certame3_angel_salinas/services/auth_service.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -63,7 +64,9 @@ class HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final correoUsuario = FirebaseAuth.instance.currentUser?.email ?? 'Usuario';
+    final nombreUsuario = AuthService.nombreVisible(
+      FirebaseAuth.instance.currentUser,
+    );
     return Scaffold(
       backgroundColor: PaletaColores.fondo,
       appBar: AppBar(
@@ -96,7 +99,7 @@ class HomePageState extends State<HomePage> {
                     SizedBox(width: 8),
                     Expanded(
                       child: Text(
-                        correoUsuario,
+                        nombreUsuario,
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(fontSize: 20),
                       ),
@@ -145,7 +148,7 @@ class HomePageState extends State<HomePage> {
 
   Widget homeBuild() {
     final user = FirebaseAuth.instance.currentUser;
-    final correoUsuario = user?.email ?? 'Usuario';
+    final nombreUsuario = AuthService.nombreVisible(user);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -163,7 +166,7 @@ class HomePageState extends State<HomePage> {
         ),
         SizedBox(height: 10),
         Text(
-          'Hola, $correoUsuario',
+          'Hola, $nombreUsuario',
           textAlign: TextAlign.center,
           style: TextStyle(
             color: PaletaColores.secundario,
