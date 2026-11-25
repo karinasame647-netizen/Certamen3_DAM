@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "926363924475",
+    "project_id": "certamen3-angelsalinas",
+    "storage_bucket": "certamen3-angelsalinas.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:926363924475:android:0cf3871564ccc11f5c7d5e",
+        "android_client_info": {
+          "package_name": "com.example.certame3_angel_salinas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "926363924475-oo425endl179i0m2j3ibiv0c12afd3s9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.certame3_angel_salinas",
+            "certificate_hash": "481aeafe2698b62437a7185416cfafcdb068cf54"
+          }
+        },
+        {
+          "client_id": "926363924475-1mia6p535v3lo5p8uota4lln9qdknv40.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuemgpt77mrC6JkzJIvW0FEY-LSQLArtw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "926363924475-1mia6p535v3lo5p8uota4lln9qdknv40.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
